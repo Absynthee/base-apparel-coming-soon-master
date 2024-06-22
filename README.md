@@ -48,7 +48,7 @@ Users should be able to:
 
 This challenge gave me more trouble than it really should have done. I wanted to keep the max-width on this to 1440px instead of allowing it to go fullscreen at any size because it compromises the quality of the hero image.
 
-I learned more about forms, inputs and aligning with `display: absolute`. I'm also getting more familiar with the javascript behind simple forms.
+I learned more about forms, inputs and aligning with `position: absolute`. I'm also getting more familiar with the javascript behind simple forms.
 
 ## Author
 
