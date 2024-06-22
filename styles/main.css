@@ -83,6 +83,7 @@ a {
   --DarkGrayishRed: hsl(0, 6%, 24%);
   --Linear1: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
   --Linear2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+  --Linear3: 135deg, hsl(0, 100%, 95%), hsl(0, 62%, 83%);
 }
 
 /* custom end */
@@ -91,9 +92,10 @@ h1 {
   font-size: 4.1rem;
   text-transform: uppercase;
   color: var(--DarkGrayishRed);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.05;
   letter-spacing: 1rem;
+  user-select: none;
 }
 
 span {
@@ -108,12 +110,16 @@ label {
   color: var(--DesaturatedRed);
 }
 
+::selection {
+  color: var(--SoftRed);
+}
+
 html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background: hsl(0, 2%, 10%);
+  /* height: 100%;
+  background: hsl(0, 2%, 10%); */
   font-family: "Josefin Sans", serif;
   transition: all 0.5s;
 }
@@ -123,7 +129,7 @@ main {
   display: flex;
   max-width: 1440px;
   height: 800px;
-  box-shadow: 0px 0px 25px 0px black;
+  /* box-shadow: 0px 0px 25px 0px black; */
   transition: all 0.5s;
 }
 
@@ -151,8 +157,13 @@ main {
   form {
     max-width: 450px;
 
-    input {
-      border: 1px solid var(--SoftRed);
+    .button-inside {
+      position: relative;
+      width: 100%;
+    }
+
+    input[type="email"] {
+      border: 1px solid var(--DesaturatedRed);
       height: 55px;
       width: 100%;
       margin-top: 40px;
@@ -160,8 +171,56 @@ main {
       padding-inline: 25px;
       color: var(--DesaturatedRed);
       margin-bottom: 100px;
-      accent-color: var(--DesaturatedRed);
+      accent-color: var(--SoftRed);
     }
+
+    button {
+      position: absolute;
+      background: linear-gradient(var(--Linear2));
+      border-radius: 25px;
+      height: 56px;
+      width: 100px;
+      top: 39px;
+      right: 0px;
+      padding-left: 45px;
+      accent-color: var(--SoftRed);
+      cursor: pointer;
+      box-shadow: 0px 10px 30px -5px var(--DesaturatedRed);
+      transition: all 1s;
+
+      img {
+        transition: all 1s;
+      }
+
+      &:hover {
+        background: linear-gradient(var(--Linear3));
+        box-shadow: 0px 20px 30px -5px var(--DesaturatedRed);
+
+        img {
+          scale: 150%;
+        }
+      }
+    }
+  }
+}
+
+.error {
+  display: none;
+
+  .error-icon {
+    position: absolute;
+    top: 55px;
+    right: 120px;
+    user-select: none;
+    z-index: 3;
+  }
+
+  .error-text {
+    position: absolute;
+    bottom: 65px;
+    left: 25px;
+    font-size: 0.8rem;
+    color: var(--SoftRed);
   }
 }
 
@@ -174,6 +233,7 @@ main {
   overflow: hidden;
   transition: all 0.5s;
 }
+
 .hero-img {
   display: flex;
   background: url(../images/hero-desktop.jpg) no-repeat center center;
@@ -219,7 +279,6 @@ main {
     max-width: 1440px;
     height: 100%;
     box-shadow: 0px 0px 0px 0px black;
-
   }
 
   .left-section {

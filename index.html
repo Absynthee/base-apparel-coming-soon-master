@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles/main.css">
+  <script src="styles/scripts.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
@@ -23,12 +24,18 @@
       <div class="small"><img src="images/hero-mobile.jpg" alt="Model"></div>
       <h1><span>We're</span> coming soon</h1>
 
-      <form action="">
+      <form id="coming-soon" action="">
         <label for="email">
           Hello fellow shoppers! We're currently building our new fashion store.
           Add your email below to stay up-to-date with announcements and our launch deals.
-          <input type="email" name="email" id="email" title="Email Address" placeholder="Email Address">
-
+          <div class="button-inside">
+            <input type="email" name="email" id="email" title="Email Address" placeholder="Email Address">
+            <button type="submit" id="submitBtn"><img src="images/icon-arrow.svg" alt=""></button>
+            <div class="error">
+              <div class="error-icon"><img src="images/icon-error.svg" alt=""></div>
+              <p class="error-text">Please provide a valid email</p>
+            </div>
+          </div>
       </form>
       </label>
     </div>
